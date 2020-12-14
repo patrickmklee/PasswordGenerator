@@ -6,7 +6,7 @@ function randBetween(lower,upper) {
 function promptCriteria() {
     var len = 0;
     var isValidLen = false;
-    var charType;
+    var charTypes;
     // Prompt user for password length in range(8,128)
     while (isValidLen === false) {
         len = prompt("Desired Password Length? ");
@@ -19,12 +19,21 @@ function promptCriteria() {
     }
 
     var isValidCharType = false;
+    var charTypeChoices = ['lowercase', 'uppercase', 'numeric', 'special'];
     while (isValidCharType === false) {
-        charType = 3;
+        inp = prompt("Include lowercase, uppercase, numeric, and/or special characters (separate multiple options by spaces)?");
+        sinput = inp.split(" ");
+        // alert(sinput[1])
+        console.log(sinput.length);
+        for (i=0;i<sinput.length;i++) {
+            console.log(sinput[i]);
+        }
+        charTypes = sinput;
+        // charType = 'lowercase';
         isValidCharType = true;
 
     }
-    return [len,charType];
+    return [len,charTypes];
 }
 function generatePassword() {
     var criteriaArray = promptCriteria();
