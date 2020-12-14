@@ -20,10 +20,21 @@ function promptCriteria() {
 
     var isValidCharType = false;
     var charTypeChoices = ['lowercase', 'uppercase', 'numeric', 'special'];
+    // Character type preference stored in array
+    // # 0 - Lowercase Characters
+    // # 1 - Uppercase Characters
+    // # 2 - Numeric Characters
+    // # 3 - Special Characters
     while (isValidCharType === false) {
-        inp = prompt("Include lowercase, uppercase, numeric, and/or special characters (separate multiple options by spaces)?");
-        sinput = inp.split(" ");
+        inc_lower = confirm("Include lowercase letters?")
+        inc_upper = confirm("Include uppercase letters?")
+        inc_numeric = confirm("Include numeric characters?")
+        inc_special = confirm("Include special characters?")
+        isValidCharType = (inc_lower || inc_upper || inc_numeric || inc_special)
+        // inp = prompt("Include lowercase, uppercase, numeric, and/or special characters (separate multiple options by spaces)?");
+        // sinput = inp.split(" ");
         // alert(sinput[1])
+        sinput = [inc_lower, inc_upper, inc_numeric, inc_special];
         console.log(sinput.length);
         for (i=0;i<sinput.length;i++) {
             console.log(sinput[i]);
