@@ -25,6 +25,8 @@ function promptCriteria() {
     // # 1 - Uppercase Characters
     // # 2 - Numeric Characters
     // # 3 - Special Characters
+
+
     while (isValidCharType === false) {
         inc_lower = confirm("Include lowercase letters?")
         inc_upper = confirm("Include uppercase letters?")
@@ -46,19 +48,54 @@ function promptCriteria() {
     }
     return [len,charTypes];
 }
+
+// ASCII char conversion
+
+// 32 - 47 : SP Chars
+// 48 - 57 : Numeric
+// 58 - 64 : SP Chars 2
+// 65 - 90 : UpperCase
+// 91 - 96 : SP Chars 3
+// 97 - 122 : lowercase
+// 123 - 126 : SP Chars 4
+
+
 function generatePassword() {
-    var criteriaArray = promptCriteria();
-    var len = criteriaArray[0];
-    var charType = criteriaArray[1];
-    
-    // var len = randBetween(8,128);
+// Constants
+    var CHARS_UC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var CHARS_LC = 'abcdefghijklmnopqrstuvwxyz';
+    var CHARS_NUM = '0123456789';
+    var CHARS_SP = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+// placeholder variables for the generated password
     var pw = '';
     var nextChar;
+// Recieve criteria from user
+    var criteriaArray = promptCriteria();
+    var len = criteriaArray[0];
+    var charTypes = criteriaArray[1];
+
+    var pw_choices = ''
+
+    if (charTypes[0] == true) {
+        pw_choices = pw_choices + CHARS_LC;
+    }
+    if (charTypes[1] == true) {
+        pw_choices = pw_choices + CHARS_UC;
+    }
+    if (charTypes[2] == true) {
+        pw_choices = pw_choices + CHARS_NUM;
+    }
+    if (charTypes[3] == true) {
+        pw_choices = pw_choices + CHARS_SP;
+    }
+    var pw_choicesLen = pw_choices.length;
+    // var pw_choicesArray = pw_choices.split();
+    console.log(pw_choices); 
     //alert("Length:" + len);
-    alert("CharType: " + charType);
+    //alert("CharType: " + charType);   
     for (i=0;i<len;i++) {
-         nextChar = randBetween(0,9); // placeholder
-         pw = pw +" "+ nextChar;
+         nextChar = pw_choices[randBetween(0,pw_choicesLen)];
+         pw = pw+""+nextChar;
     } 
     return pw;
 }
