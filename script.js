@@ -32,7 +32,12 @@ function promptCriteria() {
         inc_upper = confirm("Include uppercase letters?")
         inc_numeric = confirm("Include numeric characters?")
         inc_special = confirm("Include special characters?")
-        isValidCharType = (inc_lower || inc_upper || inc_numeric || inc_special)
+        checkValid = (inc_lower || inc_upper || inc_numeric || inc_special)
+        if (checkValid === true) {
+            isValidCharType = true;
+        } else {
+            alert("Please select at least 1 character type.")
+        }
         // inp = prompt("Include lowercase, uppercase, numeric, and/or special characters (separate multiple options by spaces)?");
         // sinput = inp.split(" ");
         // alert(sinput[1])
@@ -43,11 +48,11 @@ function promptCriteria() {
         }
         charTypes = sinput;
         // charType = 'lowercase';
-        isValidCharType = true;
 
     }
     return [len,charTypes];
 }
+// ---------------- Ignore  Not implemented
 
 // ASCII char conversion
 
@@ -58,7 +63,9 @@ function promptCriteria() {
 // 91 - 96 : SP Chars 3
 // 97 - 122 : lowercase
 // 123 - 126 : SP Chars 4
-
+// ------------------
+// 
+// Simpler to create reference CHARS_** variables, then concatenate based on user selection
 
 function generatePassword() {
 // Constants
