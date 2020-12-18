@@ -7,19 +7,20 @@ To accomodate the user's requirements, the tool allows constraints to be defined
 ## Features
 
 The user may have specific requirements for the password to meet. To provide flexibility, the password generator is configurable and allows users to set their criteria.
-
-Password length
-
-Character Type inclusion/exclusion (e.g. no special characters, numbers, etc). 
+- Password length
+- Character Type inclusion/exclusion (e.g. no special characters, numbers, etc).
 
 ## Usage
-  Clicking the 'Generate Password' button will initiate a series of prompts to receive the user preferences for the password.
-  
-  Passwords must be within 8 to 128 characters and contain at least one of the following character types:
-    - Lowercase Characters
-    - Uppercase Characters
-    - Numeric Characters
-    - Special Characters
+  Clicking the "Generate Password" button will initiate a series of prompts to receive the user preferences for the password.<br></br>
+	![Example of generated password](assets/images/GeneratedPasswordScreenshot.jpg)
+
+	The following parameters must be met:
+  - Length set within 8 to 128 characters
+	- Contain at least one of the following character types: 
+		- Lowercase Characters
+		- Uppercase Characters
+		- Numeric Characters
+		- Special Characters
 
 
 ## Built With
