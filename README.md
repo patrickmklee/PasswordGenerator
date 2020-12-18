@@ -11,10 +11,10 @@ The user may have specific requirements for the password to meet. To provide fle
 - Character Type inclusion/exclusion (e.g. no special characters, numbers, etc).
 
 ## Usage
-  Clicking the "Generate Password" button will initiate a series of prompts to receive the user preferences for the password.<br></br>
-	![Example of generated password](assets/images/ScreenshotGeneratedPassword.png)
-
-	The following parameters must be met:
+  Clicking the "Generate Password" button will initiate a series of prompts to receive the user preferences for the password.
+  ![Example of generated password](assets/images/ScreenshotGeneratedPassword.PNG)
+  
+  The following parameters must be met:
   - Length set within 8 to 128 characters
   - Contain at least one of the following character types: 
 		- Lowercase Characters
